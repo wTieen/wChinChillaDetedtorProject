@@ -5,15 +5,15 @@ import cv2
 # DUONG DAN INPUT VIDEO
 VIDEOS_DIR = os.path.join('.', 'data', 'videos', 'test')
 # DUONG DAN OUTPUT VIDEO
-VIDEOS_DIR_OUT = os.path.join('.', 'data', 'videos', 'actual', 'S100')
+VIDEOS_DIR_OUT = os.path.join('.', 'data', 'videos', 'actual', 'new')
 
 # DUONG DAN DEN VIDEO INPUT
-video_path_in = os.path.join(VIDEOS_DIR, 'chinchilla-video (13).mp4')
+video_path_in = os.path.join(VIDEOS_DIR, 'chinchilla-video (8).mp4')
 # # DUONG DAN DEN VIDEO OUTPUT
-video_path_out = os.path.join(VIDEOS_DIR_OUT, 'chinchilla-video (13).mp4')
+video_path_out = os.path.join(VIDEOS_DIR_OUT, 'chinchilla-video (8).mp4')
 
 # LUU VIDEO O DUONG DAN DEN VIDEO OUTPUT O TREN
-video_path_out = '{}_out-mS-100.mp4'.format(video_path_out)
+video_path_out = '{}_out-mS-200.mp4'.format(video_path_out)
 
 cap = cv2.VideoCapture(video_path_in)
 ret, frame = cap.read()
@@ -23,7 +23,7 @@ H, W, _ = frame.shape
 out = cv2.VideoWriter(video_path_out, cv2.VideoWriter_fourcc(*'mp4v'), int(cap.get(cv2.CAP_PROP_FPS)), (W, H))
 
 # SU DUNG FILE DA TRAIN DE DU DOAN DOI TUONG TRONG VIDEO
-model_path = os.path.join('.', 'runs', 'detect', 'train100s', 'weights', 'last.pt')
+model_path = os.path.join('.', 'runs', 'detect', 'train200s', 'weights', 'last.pt')
 
 # Load a model
 model = YOLO(model_path)  # load a custom model
