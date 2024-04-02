@@ -5,7 +5,7 @@ import cv2
 # DUONG DAN INPUT VIDEO
 VIDEOS_DIR = os.path.join('.', 'data', 'videos', 'test')
 # DUONG DAN OUTPUT VIDEO
-VIDEOS_DIR_OUT = os.path.join('.', 'data', 'videos', 'actual', 'new')
+VIDEOS_DIR_OUT = os.path.join('.', 'data', 'videos', 'output', 'new')
 
 # DUONG DAN DEN VIDEO INPUT
 video_path_in = os.path.join(VIDEOS_DIR, 'chinchilla-video (8).mp4')
@@ -23,7 +23,7 @@ H, W, _ = frame.shape
 out = cv2.VideoWriter(video_path_out, cv2.VideoWriter_fourcc(*'mp4v'), int(cap.get(cv2.CAP_PROP_FPS)), (W, H))
 
 # SU DUNG FILE DA TRAIN DE DU DOAN DOI TUONG TRONG VIDEO
-model_path = os.path.join('.', 'runs', 'detect', 'train200s', 'weights', 'last.pt')
+model_path = os.path.join('.', 'runs', 'detect', 'train200s', 'weights', 'best.pt')
 
 # Load a model
 model = YOLO(model_path)  # load a custom model
