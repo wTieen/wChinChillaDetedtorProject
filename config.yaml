@@ -1,6 +1,6 @@
 path: ../data
 train: images/train #train images (relative to path)
-val: images/train #val videos (relative to path)
+val: images/val #val videos (relative to path)
 
 # Classes
 names:
